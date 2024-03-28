@@ -7,7 +7,6 @@ import axios from 'axios';
 import im from '../components/1_fyBJqy7fK6o-94yZQR2jFQ.jpg';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
-
 import {
     MDBCard,
     MDBCardImage,
@@ -18,10 +17,12 @@ import {
     MDBCol
 } from 'mdb-react-ui-kit';
 
+const API_Key = process.env.REACT_APP_NEWS_API_KEY
+
 function Buiness() {
     const [cards, setcards] = useState([]);
     useEffect(() => {
-        axios.get('https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=b4064b0e3a2344c398442001475851c9')
+        axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${API_Key}`)
             .then((res) => {
                 console.log(res.data.articles);
                 setcards(res.data.articles)

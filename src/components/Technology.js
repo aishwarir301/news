@@ -16,12 +16,12 @@ import {
     MDBRow,
     MDBCol
 } from 'mdb-react-ui-kit';
-
+const API_Key = process.env.REACT_APP_NEWS_API_KEY
 function Technology() {
 
     const [cards, setcards] = useState([]);
     useEffect(() => {
-        axios.get('https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=b4064b0e3a2344c398442001475851c9')
+        axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=${API_Key}`)
             .then((res) => {
             console.log(res.data.articles);
             setcards(res.data.articles)

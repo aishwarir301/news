@@ -9,6 +9,7 @@ import Bitcoin from './Bitcoin';
 import Genral from './Genral';
 import Health from './Health';
 import Technology from './Technology';
+
 function Layout() {
     
     return (
